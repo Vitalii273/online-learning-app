@@ -4,7 +4,6 @@ import {GoogleLogin, GoogleLogout} from 'react-google-login';
 
 const CLIENT_ID = '324504415316-1vq8vi2dfokq82kp6bsq03dfcmqb6cc6.apps.googleusercontent.com';
 
-
 class GoogleBtn extends Component {
     constructor(props) {
         super(props);
@@ -56,7 +55,8 @@ class GoogleBtn extends Component {
                         onLogoutSuccess={this.logout}
                         onFailure={this.handleLogoutFailure}
                     >
-                    </GoogleLogout> : <GoogleLogin
+                    </GoogleLogout> :
+                    <GoogleLogin
                         clientId={CLIENT_ID}
                         buttonText='Login'
                         onSuccess={this.login}

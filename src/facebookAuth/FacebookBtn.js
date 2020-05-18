@@ -10,6 +10,8 @@ import {createButton} from "react-social-login-buttons";
  */
 const FacebookBtn = () => {
 
+    const API_ID = "535677650439058"
+
     const [accessToken, setAccessToken] = useState("");
 
     const responseFacebook = (response) => {
@@ -19,7 +21,7 @@ const FacebookBtn = () => {
 
     /** Method for testing. */
     const componentClicked = (data) => {
-        console.log(data)
+        console.log("DATA", data)
     }
 
     const authenticate = (response) => {
@@ -52,14 +54,13 @@ const FacebookBtn = () => {
         <div>
             <br/>
             <FacebookAuth  // #1 option of login button.
-                appId="535677650439058"
+                appId={API_ID}
                 callback={authenticate}
                 component={MyFacebookLoginButton}
             />
-
             <br/>
             <FacebookLogin  // #2 option of login button.
-                appId="535677650439058"
+                appId={API_ID}
                 autoLoad={false}
                 fields="name,email,picture"
                 onClick={componentClicked}
